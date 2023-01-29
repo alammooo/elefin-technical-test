@@ -1,0 +1,57 @@
+/**
+ * ==============================
+ * CASE 1
+ * ==============================
+ * Palindrome merupakan sebuah kata, frasa, angka, atau serangkaian simbol yang jika dibaca bolak-balik akan tetap sama.
+ * Contohnya adalah kata MADAM yang jika dibaca terbalik tetaplah MADAM dan 2002 jika dibalik tetaplah 2002
+ * 
+ * Hasil perkalian bilangan dengan jumlah 2 digit terbesar saat ini adalah 9009 yang didapat dari 91 x 99
+ * 
+ * Dengan berbekal input integer n sebagai jumlah digit (asumsikan n <= 4),
+ * carilah hasil perkalian dari bilangan sejumlah n-digit yang merupakan Palindrome terbesar
+ */
+
+const sampleInput1 = 1; // Output : 9
+const sampleInput2 = 2; // Output : 9009
+const sampleInput3 = 3; // Output : 906609
+
+/**
+ * ==============================
+ * TYPE YOUR PSEUDOCODE BELOW
+ * ==============================
+ * 
+ */
+
+// TYPE YOUR CODE BELOW
+
+BEGIN largestPalindrome
+  PASS IN n AS NUMBER
+
+STORE max WITH MATH.POWER(10, n) - 1
+STORE result WITH 0
+
+FOR i EQUAL max J GREATER THAN max DIVIDE BY 0 DECREMENT BY 1
+    FOR j EQUAL i J GREATER THAN max DIVIDE BY 10 DECREMENT BY 1
+        STORE multiple WITH i * j
+        IF multiple LOWER THAN EQUAL result 
+        BREAK
+        END IF
+        IF isPalindrome(multiple) EQUAL TRUE THEN
+            STORE result WITH multiple
+        END IF
+    END FOR
+END FOR
+
+PASS OUT result
+
+END
+
+
+
+BEGIN isPalindrome
+  PASS IN num AS NUMBER
+
+STORE str WITH num AND SET TO STRING
+PASS OUT str EQUAL str AND SPLIT '' AND REVERSE AND JOIN ''
+
+END

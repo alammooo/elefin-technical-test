@@ -1,0 +1,56 @@
+/**
+ * ==============================
+ * CASE 2
+ * ==============================
+ * Negara-negara yang mengikuti FIFA World Cup 2022 dibagi menjadi 8 group.
+ * Untuk bisa lolos ke babak selanjutnya (16 besar) diambil perwakilan 2 negara dengan poin tertinggi dari masing-masing group.
+ * Data hasil dari seluruh pertandingan di fase group sudah dicatat di sebuah file dengan format JSON di folder assets/tables.json
+ * Negara mana sajakah yang lolos ke babak 16 besar? Buatlah sebuah program untuk menampilkan negara-negara yang lolos ke babak 16 besar.
+ * 
+ * Penentuan poin sebagai berikut:
+ * Jika menang (win), tim mendapatkan 3 poin
+ * Jika seri (draw), tim mendapatkan 1 poin
+ * Jika kalah (lose), tim mendapatkan poin 0
+ * 
+ * Example Output:
+ * [ { name: "Indonesia", group: "Y", match_played: 3, points: 0 } ]
+ */
+
+/**
+ * ==============================
+ * TYPE YOUR PSEUDOCODE BELOW
+ * ==============================
+ * 
+ */
+
+STORE groupScores WITH ANY OBJECT
+
+FOR team OF data
+  group = team.group
+  score = 0
+
+  FOR match OF team.matches
+    IF match.result EQUAL "win"
+      SET SCORE WITH SCORE PLUS 3
+    ELSE IF match.result EQUAL "draw"
+      SET SCORE WITH SCORE PLUS 1
+    END IF
+  END FOR
+
+  IF groupScores[group] IS FALSY
+    SET groupScores[group] WITH ANY ARRAY
+  END IF
+
+  SET { name: team.name, score: score } WITH groupScores[group]
+
+END FOR
+
+STORE knockoutStage WITH ANY ARRAY
+
+FOR group OF groupScores
+  SORT group BY score DESCENDING
+  SET group[0].name and group[1].name INTO knockoutStage
+END FOR
+
+DISPLAY knockoutStage
+

@@ -1,0 +1,19 @@
+/**
+ * ==============================
+ * CASE 3
+ * ==============================
+ * 
+ * Terdapat sebuah bengkel otomotif yang menawarkan jasa servis kendaraan mobil dan motor.
+ * Setiap merek dari kendaraan mobil dan motor tersebut memiliki jenis dan tipe yang berbeda-beda.
+ * Jika kamu diminta membuat program untuk booking servis di bengkel tersebut, bagaimana kamu akan membuat skema databasenya?
+ */
+
+ 
+1. Buat tabel "Vehicle" yang menyimpan informasi umum tentang kendaraan seperti merek, tipe, nomor plat, dan tanggal servis terakhir.
+2. Buat tabel "Customer" yang menyimpan informasi tentang pelanggan seperti nama, nomor telepon, dan alamat email.
+3. Buat tabel "Booking" untuk menyimpan informasi tentang pemesanan servis, termasuk tanggal pemesanan, tanggal servis yang diinginkan, dan status pemesanan.
+4. Hubungkan tabel "Vehicle" dan "Customer" dengan tabel "Booking" dengan menggunakan kunci foreign key untuk mengidentifikasi kendaraan dan pelanggan yang terkait dengan pemesanan tersebut.
+5. Tambahkan tabel "Service Type" untuk menyimpan jenis layanan yang ditawarkan seperti ganti oli, perbaikan mesin, dan lainnya.
+6. Hubungkan tabel "Service Type" dengan tabel "Booking" dengan menggunakan kunci foreign key untuk mengidentifikasi jenis layanan yang dipilih oleh pelanggan.
+
+untuk ERD Dapat diliat di Gambar Pada File : bengkel.png
